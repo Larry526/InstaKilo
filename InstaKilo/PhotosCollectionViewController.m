@@ -8,10 +8,12 @@
 
 #import "PhotosCollectionViewController.h"
 #import "CustomCollectionViewCell.h"
+#import "PhotoManager.h"
+#import "PhotosCollectionReusableView.h"
 
-@interface PhotosCollectionViewController () <UICollectionViewDataSource>
+@interface PhotosCollectionViewController () <UICollectionViewDataSource> 
 
-@property (nonatomic, strong) NSArray *displayImagesArray;
+@property (strong, nonatomic) PhotoManager *photoManager;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
@@ -21,57 +23,73 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.displayImagesArray = [NSArray arrayWithObjects: @"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg", @"5.jpg", @"6.jpg",@"7.jpg",@"8.jpg",@"9.jpg",@"10.jpg",nil];
-  
-}s
+    self.photoManager = [[PhotoManager alloc]init];
+    
+    // tweaks space between sections
+    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 0, 0, 0);
+}
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return self.photoManager.imageArray.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.displayImagesArray.count;
+    return [[self.photoManager.imageArray objectAtIndex:section] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.displayImage.image = [UIImage imageNamed:self.displayImagesArray[indexPath.row]];
+    cell.displayImage.image = [UIImage imageNamed:[self.photoManager.imageArray[indexPath.section] objectAtIndex:indexPath.row]];
+    NSLog(@"Row: %li, Section: %li", indexPath.row, indexPath.section);
 
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
+#pragma mark <ReusableView>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        PhotosCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        NSString *title = @"";
+        if (indexPath.section == 0) {
+            title = @"Cars";
+        } else if (indexPath.section == 1) {
+            title = @"People";
+        }
+        headerView.titleLabel.text = title;
+        
+        reusableview = headerView;
+    }
+    
+    
+    return reusableview;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+
+
+#pragma mark <Segmented Control>
+
+- (IBAction)segmentPressed:(UISegmentedControl *)sender {
+    
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        NSLog(@"All");
+        //    cell.displayImage.image = [UIImage imageNamed:self.photoManager.imageArray[indexPath.row]];
+
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        NSLog(@"Location");
+        NSLog(@"%lu", self.photoManager.imageArray.count);
+    } else if (self.segmentedControl.selectedSegmentIndex == 2) {
+        NSLog(@"Group");
+    }
+
 }
-*/
+
 
 @end

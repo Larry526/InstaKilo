@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058AD5491FBCECC1000CC34F /* PhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 058AD5481FBCECC1000CC34F /* PhotoManager.m */; };
+		058AD54D1FBCF591000CC34F /* PhotosCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 058AD54C1FBCF591000CC34F /* PhotosCollectionReusableView.m */; };
 		05D6E19C1FBC91FE00DE7B44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6E19B1FBC91FE00DE7B44 /* AppDelegate.m */; };
 		05D6E1A21FBC91FE00DE7B44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D6E1A01FBC91FE00DE7B44 /* Main.storyboard */; };
 		05D6E1A41FBC91FE00DE7B44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D6E1A31FBC91FE00DE7B44 /* Assets.xcassets */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		058AD5471FBCECC1000CC34F /* PhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoManager.h; sourceTree = "<group>"; };
+		058AD5481FBCECC1000CC34F /* PhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoManager.m; sourceTree = "<group>"; };
+		058AD54B1FBCF591000CC34F /* PhotosCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionReusableView.h; sourceTree = "<group>"; };
+		058AD54C1FBCF591000CC34F /* PhotosCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionReusableView.m; sourceTree = "<group>"; };
 		05D6E1971FBC91FE00DE7B44 /* InstaKilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaKilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D6E19A1FBC91FE00DE7B44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		05D6E19B1FBC91FE00DE7B44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		058AD54A1FBCED47000CC34F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05D6E1B41FBC964500DE7B44 /* CustomCollectionViewCell.h */,
+				05D6E1B51FBC964500DE7B44 /* CustomCollectionViewCell.m */,
+				058AD54B1FBCF591000CC34F /* PhotosCollectionReusableView.h */,
+				058AD54C1FBCF591000CC34F /* PhotosCollectionReusableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		05D6E18E1FBC91FE00DE7B44 = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +79,11 @@
 			isa = PBXGroup;
 			children = (
 				05D6E1A01FBC91FE00DE7B44 /* Main.storyboard */,
-				05D6E1B41FBC964500DE7B44 /* CustomCollectionViewCell.h */,
-				05D6E1B51FBC964500DE7B44 /* CustomCollectionViewCell.m */,
 				05D6E1B01FBC944800DE7B44 /* PhotosCollectionViewController.h */,
 				05D6E1B11FBC944800DE7B44 /* PhotosCollectionViewController.m */,
+				058AD5471FBCECC1000CC34F /* PhotoManager.h */,
+				058AD5481FBCECC1000CC34F /* PhotoManager.m */,
+				058AD54A1FBCED47000CC34F /* View */,
 				05D6E1B31FBC945700DE7B44 /* Supporting Files */,
 				05D6E1A81FBC91FE00DE7B44 /* Info.plist */,
 			);
@@ -157,6 +175,8 @@
 			files = (
 				05D6E1AA1FBC91FE00DE7B44 /* main.m in Sources */,
 				05D6E1B21FBC944800DE7B44 /* PhotosCollectionViewController.m in Sources */,
+				058AD54D1FBCF591000CC34F /* PhotosCollectionReusableView.m in Sources */,
+				058AD5491FBCECC1000CC34F /* PhotoManager.m in Sources */,
 				05D6E19C1FBC91FE00DE7B44 /* AppDelegate.m in Sources */,
 				05D6E1B61FBC964500DE7B44 /* CustomCollectionViewCell.m in Sources */,
 			);
