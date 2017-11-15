@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PhotosCollectionViewController.h
 //  InstaKilo
 //
 //  Created by Larry Luk on 2017-11-15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PhotosCollectionViewController : UICollectionViewController
 
 @end
-

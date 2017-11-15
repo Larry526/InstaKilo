@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		05D6E19C1FBC91FE00DE7B44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6E19B1FBC91FE00DE7B44 /* AppDelegate.m */; };
-		05D6E19F1FBC91FE00DE7B44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6E19E1FBC91FE00DE7B44 /* ViewController.m */; };
 		05D6E1A21FBC91FE00DE7B44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D6E1A01FBC91FE00DE7B44 /* Main.storyboard */; };
 		05D6E1A41FBC91FE00DE7B44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D6E1A31FBC91FE00DE7B44 /* Assets.xcassets */; };
 		05D6E1A71FBC91FE00DE7B44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D6E1A51FBC91FE00DE7B44 /* LaunchScreen.storyboard */; };
 		05D6E1AA1FBC91FE00DE7B44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6E1A91FBC91FE00DE7B44 /* main.m */; };
+		05D6E1B21FBC944800DE7B44 /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6E1B11FBC944800DE7B44 /* PhotosCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05D6E1971FBC91FE00DE7B44 /* InstaKilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaKilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D6E19A1FBC91FE00DE7B44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		05D6E19B1FBC91FE00DE7B44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		05D6E19D1FBC91FE00DE7B44 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		05D6E19E1FBC91FE00DE7B44 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		05D6E1A11FBC91FE00DE7B44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05D6E1A31FBC91FE00DE7B44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05D6E1A61FBC91FE00DE7B44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05D6E1A81FBC91FE00DE7B44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05D6E1A91FBC91FE00DE7B44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		05D6E1B01FBC944800DE7B44 /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
+		05D6E1B11FBC944800DE7B44 /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +58,25 @@
 		05D6E1991FBC91FE00DE7B44 /* InstaKilo */ = {
 			isa = PBXGroup;
 			children = (
-				05D6E19A1FBC91FE00DE7B44 /* AppDelegate.h */,
-				05D6E19B1FBC91FE00DE7B44 /* AppDelegate.m */,
-				05D6E19D1FBC91FE00DE7B44 /* ViewController.h */,
-				05D6E19E1FBC91FE00DE7B44 /* ViewController.m */,
 				05D6E1A01FBC91FE00DE7B44 /* Main.storyboard */,
-				05D6E1A31FBC91FE00DE7B44 /* Assets.xcassets */,
-				05D6E1A51FBC91FE00DE7B44 /* LaunchScreen.storyboard */,
+				05D6E1B01FBC944800DE7B44 /* PhotosCollectionViewController.h */,
+				05D6E1B11FBC944800DE7B44 /* PhotosCollectionViewController.m */,
+				05D6E1B31FBC945700DE7B44 /* Supporting Files */,
 				05D6E1A81FBC91FE00DE7B44 /* Info.plist */,
-				05D6E1A91FBC91FE00DE7B44 /* main.m */,
 			);
 			path = InstaKilo;
+			sourceTree = "<group>";
+		};
+		05D6E1B31FBC945700DE7B44 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05D6E1A91FBC91FE00DE7B44 /* main.m */,
+				05D6E19A1FBC91FE00DE7B44 /* AppDelegate.h */,
+				05D6E19B1FBC91FE00DE7B44 /* AppDelegate.m */,
+				05D6E1A51FBC91FE00DE7B44 /* LaunchScreen.storyboard */,
+				05D6E1A31FBC91FE00DE7B44 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D6E19F1FBC91FE00DE7B44 /* ViewController.m in Sources */,
 				05D6E1AA1FBC91FE00DE7B44 /* main.m in Sources */,
+				05D6E1B21FBC944800DE7B44 /* PhotosCollectionViewController.m in Sources */,
 				05D6E19C1FBC91FE00DE7B44 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
