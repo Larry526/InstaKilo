@@ -76,8 +76,8 @@
                             <rect key="frame" x="87.5" y="7" width="200" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="Location"/>
                                 <segment title="Group"/>
+                                <segment title="Location"/>
                             </segments>
                             <connections>
                                 <action selector="segmentPressed:" destination="slo-h4-FJn" eventType="valueChanged" id="Jcn-D5-qHx"/>
