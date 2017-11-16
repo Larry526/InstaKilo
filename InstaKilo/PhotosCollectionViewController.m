@@ -33,18 +33,34 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.photoManager.imageArray.count;
+    NSArray *selectedImageSections = self.photoManager.rootImageArray[self.segmentedControl.selectedSegmentIndex];
+    return selectedImageSections.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[self.photoManager.imageArray objectAtIndex:section] count];
+    return [((NSArray *)[self.photoManager.rootImageArray objectAtIndex:section]) count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.displayImage.image = [UIImage imageNamed:[self.photoManager.imageArray[indexPath.section] objectAtIndex:indexPath.row]];
-    NSLog(@"Row: %li, Section: %li", indexPath.row, indexPath.section);
+    
+    // This gets me segmented control selection
+    NSArray *selecteSegmentPhotoSections = self.photoManager.rootImageArray[self.segmentedControl.selectedSegmentIndex]; //array of sections
+    
+    // I want to get the specified section from that array
+    NSInteger section = indexPath.section;
+    NSArray *selectedSegmentPhotoSectionRows = selecteSegmentPhotoSections[section]; // array of rows
+    
+    NSInteger row = indexPath.row;
+    NSString *imageName = selectedSegmentPhotoSectionRows[row];
+    
+    UIImage *displayImage = [UIImage imageNamed:imageName];
+    
+    cell.displayImage.image = displayImage;
+    
+    
+    //cell.displayImage.image = [UIImage imageNamed:[self.photoManager.imageArray[indexPath.section] objectAtIndex:indexPath.row]];
 
     return cell;
 }
@@ -63,6 +79,7 @@
         } else if (indexPath.section == 1) {
             title = @"People";
         }
+        
         headerView.titleLabel.text = title;
         
         reusableview = headerView;
@@ -79,14 +96,11 @@
 - (IBAction)segmentPressed:(UISegmentedControl *)sender {
     
     if (self.segmentedControl.selectedSegmentIndex == 0) {
-        NSLog(@"All");
-        //    cell.displayImage.image = [UIImage imageNamed:self.photoManager.imageArray[indexPath.row]];
+        NSLog(@"Location");
 
     } else if (self.segmentedControl.selectedSegmentIndex == 1) {
-        NSLog(@"Location");
-        NSLog(@"%lu", self.photoManager.imageArray.count);
-    } else if (self.segmentedControl.selectedSegmentIndex == 2) {
         NSLog(@"Group");
+        
     }
 
 }

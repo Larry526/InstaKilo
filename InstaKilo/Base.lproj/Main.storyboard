@@ -76,7 +76,6 @@
                             <rect key="frame" x="87.5" y="7" width="200" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="All"/>
                                 <segment title="Location"/>
                                 <segment title="Group"/>
                             </segments>
